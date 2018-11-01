@@ -1,0 +1,62 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description:  S3Bucket, CloudFront Distribution, and R53 RecordSets
+Parameters:
+  DomainName:
+    Type: String
+  CertificateArn:
+    Type: String
+  HostedZoneId:
+    Type: String
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref DomainName
+      WebsiteConfiguration:
+        IndexDocument: index.html
+  CloudfrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Aliases:
+          - !Ref DomainName
+          - !Join [ ".", [ "www", !Ref DomainName]]
+        Comment: Rajjeet's personal website
+        DefaultCacheBehavior:
+          Compress: true
+          ForwardedValues:
+            QueryString: false
+          TargetOriginId: S3BucketWebsite
+          ViewerProtocolPolicy: redirect-to-https
+        DefaultRootObject: index.html
+        Enabled: true
+        Logging:
+          Bucket: !GetAtt S3Bucket.DomainName
+          Prefix: CloudFrontLogs
+        Origins:
+          - DomainName: !GetAtt S3Bucket.DomainName
+            Id: S3BucketWebsite
+            S3OriginConfig:
+              OriginAccessIdentity: ""
+        PriceClass: PriceClass_100
+        ViewerCertificate:          
+          AcmCertificateArn: !Ref CertificateArn
+          SslSupportMethod: sni-only
+  CloudFrontRecordSet:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      AliasTarget:
+        DNSName: !GetAtt CloudfrontDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+      HostedZoneId: !Ref HostedZoneId
+      Name: !Ref DomainName      
+      Type: A
+  WwwRecordSet:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      AliasTarget:
+        DNSName: !Ref CloudFrontRecordSet
+        HostedZoneId: !Ref HostedZoneId
+      HostedZoneId: !Ref HostedZoneId
+      Name: !Join [ ".", [ "www", !Ref DomainName]]
+      Type: A

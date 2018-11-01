@@ -1,0 +1,17 @@
+{
+  "name": "webpack-demo",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "rajjeet <rajjeet.phull@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
