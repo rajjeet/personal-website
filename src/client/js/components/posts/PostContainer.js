@@ -1,11 +1,11 @@
 import React from 'react';
 import Post from './Post';
 import posts from './postData';
-import { ItemGroup, Header, Container } from 'semantic-ui-react';
+import { ItemGroup, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 const PostContainer = ({ showCount, heading }) => (
-	<Container>
+	<div>
 		<Header as="h3" content={heading} dividing />
 		<ItemGroup>
 			{posts.slice(0, showCount).map(post => {
@@ -19,7 +19,7 @@ const PostContainer = ({ showCount, heading }) => (
 				);
 			})}
 		</ItemGroup>
-	</Container>
+	</div>
 );
 
 PostContainer.propTypes = {
