@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, Grid } from 'semantic-ui-react';
 import mcseBadge from '../../assets/MCSE-Data-Management-and-Analytics-2018.png';
-import awsBadge from '../../assets/aws_sa_associate_badge.png';
+import awsBadge from '../../assets/aws_sa_professional_badge.png';
 
 const Certification = () => (
 	<div>
