@@ -21,7 +21,7 @@ const App = () => (
 		<MainMenu />
 
 		<Route
-			path="/posts/"
+			path="/posts"
 			render={() => (
 				<div>
 					<Divider hidden />
