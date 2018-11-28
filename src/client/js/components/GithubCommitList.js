@@ -110,13 +110,15 @@ class GithubCommitList extends React.Component {
 									</List.Header>
 									<List.Description>
 										{timeSince(new Date(event.created_at))}
-										{event.payload.commits.map(commit => {
-											return (
-												<p style={commitStyle} key={commit.sha}>
-													{commit.message}
-												</p>
-											);
-										})}
+										<List bulleted>
+											{event.payload.commits.map(commit => {
+												return (
+													<List.Item style={commitStyle} key={commit.sha}>
+														{commit.message}
+													</List.Item>
+												);
+											})}
+										</List>
 									</List.Description>
 								</List.Content>
 							</List.Item>
