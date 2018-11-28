@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
-import PostContainer from './posts/PostContainer';
+import PostListingsContainer from './posts/PostListingsContainer';
 import MainMenu from './MainMenu';
 import HomePage from './HomePage';
 import '../../assets/favicon.ico';
@@ -15,7 +15,7 @@ const App = () => (
 			path="/posts"
 			render={() => (
 				<Container>					
-					<PostContainer showCount={2} heading="Posts" />
+					<PostListingsContainer showCount={2} heading="Posts" />
 				</Container>
 			)}
 		/>

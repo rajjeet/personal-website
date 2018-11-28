@@ -6,7 +6,7 @@ import BookList from './reading/bookList';
 import CourseList from './courses/CourseList';
 import GithubCommitList from './GithubCommitList';
 import MyCard from './MyCard';
-import PostContainer from './posts/PostContainer';
+import PostListingsContainer from './posts/PostListingsContainer';
 
 const HomePage = () => (
 	<Container>
@@ -17,7 +17,7 @@ const HomePage = () => (
 					tablet={11}
 					computer={12}				
 				>
-					<PostContainer showCount={1} heading="Latest Post" />
+					<PostListingsContainer showCount={1} heading="Latest Post" />
 					<Divider hidden />
 					<Grid stackable>
 						<Grid.Row>

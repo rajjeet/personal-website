@@ -1,10 +1,10 @@
 import React from 'react';
-import Post from './Post';
+import PostListing from './PostListing';
 import posts from './postData';
 import { ItemGroup, Header, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
-class PostContainer extends React.Component {
+class PostListingsContainer extends React.Component {
 	render() {
 		return (			
 			<Grid>
@@ -14,11 +14,11 @@ class PostContainer extends React.Component {
 						<ItemGroup>
 							{posts.slice(0, this.props.showCount).map(post => {
 								return (
-									<Post
+									<PostListing
 										key={post.header}
 										header={post.header}
 										datePosted={post.datePosted}
-										content={post.content}
+										description={post.description}
 										thumbnail={post.thumbnail}
 									/>
 								);
@@ -27,14 +27,13 @@ class PostContainer extends React.Component {
 					</Grid.Column>
 				</Grid.Row>
 			</Grid>
-			
 		);
 	}
 } 
 
-PostContainer.propTypes = {
+PostListingsContainer.propTypes = {
 	showCount: PropTypes.number.isRequired,
 	heading: PropTypes.string.isRequired
 };
 
-export default PostContainer;
+export default PostListingsContainer;
