@@ -10,7 +10,7 @@ const Certification = () => (
 			<Grid.Row>
 				<Grid.Column>
 					<a
-						href="//www.certmetrics.com/amazon/public/badge.aspx?i=1&t=c&d=2018-07-07&ci=AWS00544237"
+						href="//www.certmetrics.com/amazon/public/badge.aspx?i=4&t=c&d=2018-11-26&ci=AWS00544237"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
