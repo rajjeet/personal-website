@@ -9,15 +9,15 @@ export default class MainMenu extends Component {
 				<Grid>
 					<Grid.Row>
 						<Grid.Column>
-							<Menu className="computer only row">
+							<Menu stackable className="computer only row">
 								<Menu.Item header as={NavLink} to="/">
 									<Icon name="home" />
 									Ortmesh
 								</Menu.Item>
-								{/* <Menu.Item as={NavLink} to="/posts/">
+								<Menu.Item as={NavLink} to="/posts">
 									<Icon name="sticky note outline" />
 									Posts
-								</Menu.Item> */}
+								</Menu.Item>
 								<Dropdown item text="Contact">
 									<Dropdown.Menu>
 										<Dropdown.Item>
