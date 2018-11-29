@@ -7,8 +7,9 @@ import CourseList from './courses/CourseList';
 import GithubCommitList from './GithubCommitList';
 import MyCard from './MyCard';
 import PostListingsContainer from './posts/PostListingsContainer';
+import { Route } from 'react-router-dom';
 
-const HomePage = () => (
+const HomePage = () => (	
 	<Container>
 		<Grid padded>
 			<Grid.Row>
@@ -17,7 +18,9 @@ const HomePage = () => (
 					tablet={11}
 					computer={12}				
 				>
-					<PostListingsContainer showCount={1} heading="Latest Post" />
+					<Route exact path='/' render={(props) => (
+						<PostListingsContainer showCount={1} heading="Latest Post" {...props} />
+					)} />					
 					<Divider hidden />
 					<Grid stackable>
 						<Grid.Row>
@@ -63,5 +66,6 @@ const HomePage = () => (
 		</Grid>
 	</Container>
 );
+
 
 export default HomePage;
