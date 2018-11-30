@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Segment, Divider, Container } from 'semantic-ui-react';
 import Certification from './Certification';
-import Education from './Education';
 import BookList from './reading/bookList';
 import CourseList from './courses/CourseList';
 import GithubCommitList from './GithubCommitList';
@@ -19,7 +18,7 @@ const HomePage = () => (
 					computer={12}				
 				>
 					<Route exact path='/' render={(props) => (
-						<PostListingsContainer showCount={1} heading="Latest Post" {...props} />
+						<PostListingsContainer showCount={1} heading="Latest Posts" {...props} />
 					)} />					
 					<Divider hidden />
 					<Grid stackable>
@@ -43,9 +42,7 @@ const HomePage = () => (
 					<Segment>
 						<MyCard />
 						<Divider />
-						<Certification />
-						<Divider />
-						<Education />
+						<Certification />												
 						<Grid stackable>
 							<Grid.Row>
 								<Grid.Column only="mobile">

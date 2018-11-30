@@ -1,15 +1,21 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
+import { Helmet } from 'react-helmet';
 import PostListingsContainer from './posts/PostListingsContainer';
 import MainMenu from './MainMenu';
 import HomePage from './HomePage';
-import '../../assets/favicon.ico';
+import favicon from '../../assets/icons/favicon.ico';
 import '../../css/styles.css';
 
 const App = () => (
-
 	<div>
+		<Helmet>
+			<meta charset="utf-8" />
+			<title>Ortmesh</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1" />			
+			<link rel="shortcut icon" href={favicon} />
+		</Helmet>
 		<MainMenu />
 		<Switch>
 			<Route exact path="/" component={HomePage} />

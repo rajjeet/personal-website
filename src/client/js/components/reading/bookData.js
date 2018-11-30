@@ -54,7 +54,7 @@ module.exports = [
 		date_added: '10-29-18',
 		url:
 			'https://www.audible.com/pd/Misbehaving-Audiobook/B00VQTE4OC?ref=a_lib_c4_libItem_0_B00VQTE4OC&pf_rd_p=ae76b2bb-e63d-4a67-b357-dab3dee05ca1&pf_rd_r=SSK8Z39Z8EV9Y300D8N6&',
-		status: 'Reading'
+		status: 'Completed'
 	},
 	{
 		title: 'Principles: Life and Work',

@@ -1,35 +1,15 @@
-module.exports = [
-	{
-		sequence: 122,
-		name: 'Microsoft Azure Architecture for AWS Architects',
-		status: 'In Progress',
-		link:
-			'https://www.pluralsight.com/courses/microsoft-azure-architecture-aws-architects'
-	},
-	{
-		sequence: 121,
-		name: 'Building Web Applications with the AWS SDK for Go',
-		status: 'In Progress',
-		link:
-			'https://www.pluralsight.com/courses/aws-sdk-go-building-web-applications'
-	},
-	{
-		sequence: 120,
-		name: 'SEO Fundamentals',
-		status: 'In Progress',
-		link: 'https://www.pluralsight.com/courses/seo-fundamentals'
-	},
+module.exports = [		
 	{
 		sequence: 119,
 		name: 'AWS Certified DevOps Engineer: Security, Governance, and Validation',
-		status: 'In Progress',
+		status: 'Completed',
 		link:
 			'https://www.pluralsight.com/courses/security-governance-validation-aws-certified-devops-engineer'
 	},
 	{
 		sequence: 118,
 		name: 'Amazon Web Services Databases in Depth',
-		status: 'In Progress',
+		status: 'Completed',
 		link:
 			'https://www.pluralsight.com/courses/amazon-web-services-databases-in-depth'
 	},
@@ -55,7 +35,7 @@ module.exports = [
 	{
 		sequence: 114,
 		name: 'AWS Certified DevOps Engineer: Monitoring, Metrics, and Logging',
-		status: 'Compelted',
+		status: 'Completed',
 		link:
 			'https://www.pluralsight.com/courses/monitoring-metrics-logging-aws-certified-devops-engineer'
 	},

@@ -1,42 +1,46 @@
 import React from 'react';
-// import { Item } from 'semantic-ui-react';
+import { Item } from 'semantic-ui-react';
+import Posts from './postData';
 import PropTypes from 'prop-types';
 
 class Post extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			htmlContent: ''
+			htmlContent: '',
+			post: null
 		};
 	}
 
 	componentDidMount(){
-		// fetch(this.props.content)
-		// 	.then(response => response.text())
-		// 	.then(text => this.setState({...this.state, htmlContent: text}));
-		console.log('here');
+		const post = Posts.filter(p => p.id === this.props.match.params.id)[0];
+		fetch(`${post.id}/content.html`)
+			.then(response => response.text())
+			.then(text => this.setState({...this.state, post: post, htmlContent: text}));
+
 	}
 
 	render() {
+		const post = this.state.post;
 		return (
-			// <Item>
-			// 	<Item.Image verticalAlign='middle' src={this.props.thumbnail} />
-			// 	<Item.Content>
-			// 		<Item.Header>{this.props.header}</Item.Header>
-			// 		<Item.Meta>{this.props.datePosted}</Item.Meta>
-			// 		<Item.Description><div dangerouslySetInnerHTML={{__html: this.state.htmlContent}}></div></Item.Description>					
-			// 	</Item.Content>
-			// </Item>	
-			<h1>{this.props.match.params.id}</h1>
+			<div>				
+				{post ? 					
+					<Item>
+						<Item.Image src={`${post.id}/thumbnail.png`} />
+						<Item.Content>
+							<Item.Header>{post.header}</Item.Header>
+							<Item.Meta>{post.datePosted}</Item.Meta>
+							<Item.Description><div dangerouslySetInnerHTML={{__html: this.state.htmlContent}}></div></Item.Description>					
+						</Item.Content>
+					</Item>	
+					: null}
+			</div>
+			
 		);
 	}
 }
 
 Post.propTypes = {
-	// header: PropTypes.string.isRequired,
-	// datePosted: PropTypes.string.isRequired,
-	// content: PropTypes.string.isRequired,
-	// thumbnail: PropTypes.string.isRequired
 	match: PropTypes.object
 };
 
