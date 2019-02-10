@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-	entry: './src/client/js/index.js',
+	entry: './src/js/index.js',
 	mode: 'production',
 	output: {
 		filename: 'bundle.js',
@@ -62,7 +62,7 @@ module.exports = {
 		}),
 		new webpack.HotModuleReplacementPlugin(),
 		new CopyWebpackPlugin([
-			{from: 'src/client/assets/posts', to: 'posts'}
+			{from: 'src/assets/posts', to: 'posts'}
 		], {})
 	]
 };
