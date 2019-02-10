@@ -6,7 +6,6 @@ import PostListingsContainer from './posts/PostListingsContainer';
 import MainMenu from './MainMenu';
 import HomePage from './HomePage';
 import favicon from '../../assets/icons/favicon.ico';
-import '../../css/styles.css';
 import 'semantic-ui-css/semantic.min.css';
 
 const App = () => (
