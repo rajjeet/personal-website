@@ -4,3 +4,4 @@ bower_components/
 .vscode/
 **/*.csv
 npm-debug.log
+.idea/
